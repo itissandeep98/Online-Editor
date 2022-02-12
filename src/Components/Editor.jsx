@@ -13,7 +13,12 @@ function Editor() {
 	const [lang, setLang] = useState('py');
 	return (
 		<div>
-			<LanguageSelector lang={lang} setLang={setLang} />
+			<LanguageSelector
+				lang={lang}
+				setLang={setLang}
+				code={code}
+				setCode={setCode}
+			/>
 			<CodeEditor
 				value={code[lang]}
 				language={lang}
@@ -30,14 +35,12 @@ function Editor() {
 			<div className="flex flex-row mt-4 justify-end ">
 				<button
 					type="button"
-					className="mr-9 font-medium rounded-lg text-sm px-5 py-2.5 focus:ring-gray-600 bg-gray-800  text-white hover:bg-gray-700 "
-				>
+					className="mr-9 font-medium rounded-lg text-sm px-5 py-2.5 focus:ring-gray-600 bg-gray-800  text-white hover:bg-gray-700 ">
 					Run Code
 				</button>
 				<button
 					type="button"
-					className="font-medium rounded-lg text-sm px-5 py-2.5 focus:ring-green-500 bg-green-500  text-white hover:bg-green-900 "
-				>
+					className="font-medium rounded-lg text-sm px-5 py-2.5 focus:ring-green-500 bg-green-500  text-white hover:bg-green-900 ">
 					Submit
 				</button>
 			</div>
