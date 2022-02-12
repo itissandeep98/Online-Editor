@@ -1,22 +1,20 @@
-import React from "react";
-
 function LanguageSelector({ lang, setLang }) {
 	const data = [
 		{
-			name: "JavaScript",
-			value: "js",
+			name: 'JavaScript',
+			value: 'js',
 		},
 		{
-			name: "Python",
-			value: "py",
+			name: 'Python',
+			value: 'py',
 		},
 		{
-			name: "Java",
-			value: "java",
+			name: 'Java',
+			value: 'java',
 		},
 		{
-			name: "C++",
-			value: "cpp",
+			name: 'C++',
+			value: 'cpp',
 		},
 	];
 	return (
@@ -30,10 +28,10 @@ function LanguageSelector({ lang, setLang }) {
 			<select
 				id="languages"
 				value={lang}
-				onChange={(evn) => setLang(evn.target.value)}
+				onChange={evn => setLang(evn.target.value)}
 				className=" shadow-2xl text-sm rounded-lg  p-2.5 bg-gray-700 text-white "
 			>
-				{data.map((item) => (
+				{data.map(item => (
 					<option key={item.name} value={item.value}>
 						{item.name}
 					</option>

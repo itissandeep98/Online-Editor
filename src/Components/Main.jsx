@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import Editor from "./Editor";
+import Editor from './Editor';
 
 function Main() {
 	return (

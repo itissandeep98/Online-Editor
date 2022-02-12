@@ -1,16 +1,16 @@
-import React, { useState } from "react";
-import LanguageSelector from "./LanguageSelector";
-import CodeEditor from "@uiw/react-textarea-code-editor";
+import CodeEditor from '@uiw/react-textarea-code-editor';
+import { useEffect, useState } from 'react';
+import LanguageSelector from './LanguageSelector';
 
 function Editor() {
 	const [code, setCode] = useState(
-		JSON.parse(localStorage.getItem("code")) || ""
+		JSON.parse(localStorage.getItem('code')) || ''
 	);
 	useEffect(() => {
-		localStorage.setItem("code", JSON.stringify(code));
+		localStorage.setItem('code', JSON.stringify(code));
 	}, [code]);
 
-	const [lang, setLang] = useState("py");
+	const [lang, setLang] = useState('py');
 	return (
 		<div>
 			<LanguageSelector lang={lang} setLang={setLang} />
@@ -18,13 +18,13 @@ function Editor() {
 				value={code[lang]}
 				language={lang}
 				placeholder={`Please enter your ${lang} code.`}
-				onChange={(evn) => setCode({ ...code, [lang]: evn.target.value })}
+				onChange={evn => setCode({ ...code, [lang]: evn.target.value })}
 				padding={15}
 				className="bg-slate-500 rounded-2xl shadow-2xl"
 				style={{
 					fontSize: 12,
-					backgroundColor: "#f5f5f5",
-					minHeight: "400px",
+					backgroundColor: '#f5f5f5',
+					minHeight: '400px',
 				}}
 			/>
 			<div className="flex flex-row mt-4 justify-end ">
