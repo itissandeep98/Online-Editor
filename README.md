@@ -9,8 +9,13 @@ MIDAS Editor
 
 ## Development
 
-`npm i`\
-`npm run start`
+```
+npm i
+```
+
+```
+npm run start
+```
 
 ## Judge0 API documentation
 
