@@ -7,11 +7,11 @@ export const Languages = {
 		id: 62,
 		name: 'Java',
 	},
-	js: {
+	javascript: {
 		id: 63,
 		name: 'JavaScript',
 	},
-	py: {
+	python: {
 		id: 71,
 		name: 'Python',
 	},

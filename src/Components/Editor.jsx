@@ -1,8 +1,9 @@
-import CodeEditor from '@uiw/react-textarea-code-editor';
 import LanguageSelector from './LanguageSelector';
+import Editor, { DiffEditor, useMonaco, loader } from '@monaco-editor/react';
 
-function Editor(props) {
+function Editor1(props) {
 	const { code, setCode, lang, setLang, submit, inp, setInp } = props;
+	console.log(lang, code);
 
 	return (
 		<div>
@@ -12,7 +13,20 @@ function Editor(props) {
 				code={code}
 				setCode={setCode}
 			/>
-			<CodeEditor
+			<Editor
+				height="90vh"
+				value={code[lang]}
+				language={lang}
+				onChange={evn => setCode({ ...code, [lang]: evn })}
+				options={{
+					selectOnLineNumbers: true,
+					renderLineHighlight: 'none',
+					minimap: { enabled: false },
+					renderIndentGuides: true,
+				}}
+				className="bg-slate-500 rounded-2xl shadow-2xl"
+			/>
+			{/* <CodeEditor
 				value={code[lang]}
 				language={lang}
 				placeholder={`Please enter your ${lang} code.`}
@@ -24,7 +38,7 @@ function Editor(props) {
 					backgroundColor: '#f5f5f5',
 					minHeight: '400px',
 				}}
-			/>
+			/> */}
 
 			<textarea
 				rows="4"
@@ -52,4 +66,4 @@ function Editor(props) {
 	);
 }
 
-export default Editor;
+export default Editor1;

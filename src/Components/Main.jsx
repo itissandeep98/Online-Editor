@@ -6,9 +6,14 @@ import Results from './Results';
 
 function Main() {
 	const [code, setCode] = useState(
-		JSON.parse(localStorage.getItem('code')) || ''
+		JSON.parse(localStorage.getItem('code')) || {
+			cpp: '',
+			java: '',
+			python: '',
+			javascript: '',
+		}
 	);
-	const [lang, setLang] = useState('py');
+	const [lang, setLang] = useState('cpp');
 	const [results, setResults] = useState(null);
 	const [inp, setInp] = useState('');
 
