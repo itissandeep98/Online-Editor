@@ -1,9 +1,8 @@
+import Editor from '@monaco-editor/react';
 import LanguageSelector from './LanguageSelector';
-import Editor, { DiffEditor, useMonaco, loader } from '@monaco-editor/react';
 
 function Editor1(props) {
 	const { code, setCode, lang, setLang, submit, inp, setInp } = props;
-	console.log(lang, code);
 
 	return (
 		<div>
@@ -16,6 +15,7 @@ function Editor1(props) {
 			<Editor
 				height="90vh"
 				value={code[lang]}
+				theme="vs-dark"
 				language={lang}
 				onChange={evn => setCode({ ...code, [lang]: evn })}
 				options={{
@@ -23,22 +23,9 @@ function Editor1(props) {
 					renderLineHighlight: 'none',
 					minimap: { enabled: false },
 					renderIndentGuides: true,
+					scrollBeyondLastLine: false,
 				}}
-				className="bg-slate-500 rounded-2xl shadow-2xl"
 			/>
-			{/* <CodeEditor
-				value={code[lang]}
-				language={lang}
-				placeholder={`Please enter your ${lang} code.`}
-				onChange={evn => setCode({ ...code, [lang]: evn.target.value })}
-				padding={15}
-				className="bg-slate-500 rounded-2xl shadow-2xl"
-				style={{
-					fontSize: 12,
-					backgroundColor: '#f5f5f5',
-					minHeight: '400px',
-				}}
-			/> */}
 
 			<textarea
 				rows="4"

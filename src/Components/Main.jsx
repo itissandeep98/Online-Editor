@@ -3,6 +3,22 @@ import { Judge0Token } from '../Utils/Constants';
 import { Languages } from '../Utils/Languages';
 import Editor from './Editor';
 import Results from './Results';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+
+const markdown = `A paragraph with *emphasis* and **strong importance**.
+
+> A block quote with ~strikethrough~ and a URL: https://reactjs.org.
+
+## Lists
+* [ ] todo
+* [x] done
+
+A table:
+
+| a | b |
+| - | - |
+`;
 
 function Main() {
 	const [code, setCode] = useState(
@@ -62,11 +78,14 @@ function Main() {
 
 	return (
 		<>
-			<div className=" text-center flex justify-center">
+			{/* <div className=" text-center flex justify-center">
 				<img src="/Logos/banner.jpeg" alt="banner" className=" h-48 " />
-			</div>
-			<div className="grid grid-cols-4 gap-4 px-9 py-7  font-poppins ">
-				<div className="col-span-3 text-sm text-justify p-5">
+			</div> */}
+			<div className="grid grid-cols-4 gap-4  font-poppins ">
+				<div className="col-span-2 text-sm text-justify p-5 max-h-screen overflow-auto border-r-8">
+					<ReactMarkdown children={markdown} remarkPlugins={[remarkGfm]} />
+				</div>
+				<div className="col-span-2 py-4 max-h-screen overflow-auto">
 					<Editor
 						code={code}
 						setCode={setCode}
@@ -76,8 +95,6 @@ function Main() {
 						inp={inp}
 						setInp={setInp}
 					/>
-				</div>
-				<div>
 					<Results results={results} />
 				</div>
 			</div>

@@ -22,9 +22,9 @@ function LanguageSelector({ lang, setLang, code, setCode }) {
 	return (
 		<div className=" mb-4 flex flex-row items-center justify-between">
 			<div className="border bg-gray-700 rounded-2xl shadow-xl px-3 py-2 hover:bg-slate-600 text-white cursor-pointer">
-				<img src="/icons/upload.svg" className="h-8 inline mr-3 " />
+				<img src="/icons/upload.svg" className="h-5 inline mr-3 " />
 				<label
-					className="text-sm font-medium cursor-pointer "
+					className="text-xs font-medium cursor-pointer "
 					htmlFor="user_avatar"
 				>
 					Upload as file
@@ -48,7 +48,7 @@ function LanguageSelector({ lang, setLang, code, setCode }) {
 					id="languages"
 					value={lang}
 					onChange={evn => setLang(evn.target.value)}
-					className=" shadow-2xl text-sm rounded-lg  p-3 bg-gray-700 text-white cursor-pointer "
+					className=" shadow-2xl text-xs rounded-lg  px-3 py-2 bg-gray-700 text-white cursor-pointer "
 				>
 					{data.map(item => (
 						<option key={item.name} value={item.value}>

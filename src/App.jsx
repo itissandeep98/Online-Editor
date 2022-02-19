@@ -4,7 +4,7 @@ import Main from './Components/Main';
 
 function App() {
 	return (
-		<div className="App">
+		<div className="App max-h-screen overflow-hidden">
 			<BrowserRouter>
 				<Routes>
 					<Route path="/" element={<Main />} />
