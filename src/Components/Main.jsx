@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Judge0Token } from '../Utils/Constants';
+import { Judge0Token, TemplateCode } from '../Utils/Constants';
 import { Languages } from '../Utils/Languages';
 import Editor from './Editor';
 import Results from './Results';
@@ -22,12 +22,7 @@ A table:
 
 function Main() {
 	const [code, setCode] = useState(
-		JSON.parse(localStorage.getItem('code')) || {
-			cpp: '',
-			java: '',
-			python: '',
-			javascript: '',
-		}
+		JSON.parse(localStorage.getItem('code')) || TemplateCode
 	);
 	const [lang, setLang] = useState('cpp');
 	const [results, setResults] = useState(null);
@@ -83,19 +78,19 @@ function Main() {
 			</div> */}
 			<div className="grid grid-cols-4 gap-4  font-poppins ">
 				<div className="col-span-2 text-sm text-justify p-5 max-h-screen overflow-auto border-r-8">
+					<h1 className="text-4xl my-2">Dummy Question Title</h1>
+					<hr />
+					<br />
 					<ReactMarkdown children={markdown} remarkPlugins={[remarkGfm]} />
 				</div>
 				<div className="col-span-2 py-4 max-h-screen overflow-auto">
-					<Editor
-						code={code}
-						setCode={setCode}
-						lang={lang}
-						setLang={setLang}
+					<Editor code={code} setCode={setCode} lang={lang} setLang={setLang} />
+					<Results
+						results={results}
 						submit={submit}
 						inp={inp}
 						setInp={setInp}
 					/>
-					<Results results={results} />
 				</div>
 			</div>
 		</>
