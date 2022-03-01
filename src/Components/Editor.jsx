@@ -5,7 +5,7 @@ function Editor1(props) {
 	const { code, setCode, lang, setLang } = props;
 
 	return (
-		<div>
+		<div className="pr-3 ">
 			<LanguageSelector
 				lang={lang}
 				setLang={setLang}
@@ -15,7 +15,7 @@ function Editor1(props) {
 			<Editor
 				height="70vh"
 				value={code[lang]}
-				theme="vs-dark"
+				// theme="vs-dark"
 				language={lang}
 				onChange={evn => setCode({ ...code, [lang]: evn })}
 				options={{
@@ -26,6 +26,7 @@ function Editor1(props) {
 					scrollBeyondLastLine: false,
 				}}
 			/>
+			<hr />
 		</div>
 	);
 }
