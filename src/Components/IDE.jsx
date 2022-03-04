@@ -1,7 +1,7 @@
 import Editor from '@monaco-editor/react';
 import LanguageSelector from './LanguageSelector';
 
-function Editor1(props) {
+function IDE(props) {
 	const { code, setCode, lang, setLang } = props;
 
 	return (
@@ -31,4 +31,4 @@ function Editor1(props) {
 	);
 }
 
-export default Editor1;
+export default IDE;

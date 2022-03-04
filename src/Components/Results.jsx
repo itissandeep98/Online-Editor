@@ -11,8 +11,9 @@ function Results({ results, submit, setInp, inp }) {
 					<a
 						onClick={() => setActive(false)}
 						className={classNames(
-							'inline-block py-4 px-4 text-sm font-medium text-center  rounded-t-lg active cursor-pointer ',
-							{ 'text-blue-600 bg-gray-100': !active }
+							'inline-block py-4 px-4 text-sm font-medium text-center  rounded-t-lg active cursor-pointer no-underline ',
+							{ 'text-orange-500 bg-gray-100': !active },
+							{ 'text-black': active }
 						)}
 					>
 						Run
@@ -22,8 +23,9 @@ function Results({ results, submit, setInp, inp }) {
 					<a
 						onClick={() => setActive(true)}
 						className={classNames(
-							'inline-block py-4 px-4 text-sm font-medium text-center rounded-t-lg cursor-pointer ',
-							{ 'text-blue-600 bg-gray-100': active }
+							'inline-block py-4 px-4 text-sm font-medium text-center rounded-t-lg cursor-pointer no-underline',
+							{ 'text-orange-500 bg-gray-100': active },
+							{ 'text-black': !active }
 						)}
 					>
 						Output

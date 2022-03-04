@@ -4,7 +4,7 @@ import remarkGfm from 'remark-gfm';
 import remarkMath from 'remark-math';
 import rehypeMath from 'rehype-mathjax';
 import { TemplateCode } from '../Utils/Constants';
-import Editor from './Editor';
+import IDE from './IDE';
 import Results from './Results';
 
 function MidasEditor(props) {
@@ -28,9 +28,9 @@ function MidasEditor(props) {
 	return (
 		<>
 			<div className="grid grid-cols-4 gap-4  font-poppins ">
-				<div className="col-span-2 text-sm text-justify p-5 max-h-screen overflow-auto border-r-8">
+				<div className="col-span-2 text-sm text-justify p-5 max-h-screen overflow-auto">
 					<div className=" text-center flex justify-center">
-						<img src="/Logos/banner.jpeg" alt="banner" className=" h-24 " />
+						<img src="/Logos/banner.jpeg" alt="banner" className="h-24" />
 					</div>
 					<h1 className="text-4xl my-2">{title}</h1>
 					<hr />
@@ -42,7 +42,7 @@ function MidasEditor(props) {
 					/>
 				</div>
 				<div className="col-span-2 py-4 max-h-screen overflow-auto">
-					<Editor code={code} setCode={setCode} lang={lang} setLang={setLang} />
+					<IDE code={code} setCode={setCode} lang={lang} setLang={setLang} />
 					<Results
 						results={results}
 						submit={handleSubmit}
