@@ -2,7 +2,7 @@ name: layer0 publish
 
 on:
   push:
-    branches: master
+    branches: main
 
 jobs:
   build:
