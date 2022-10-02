@@ -1,5 +1,5 @@
-import classNames from 'classnames';
-import { useState } from 'react';
+import classNames from "classnames";
+import { useState } from "react";
 
 function Results({ results, submit, setInp, inp }) {
 	const [active, setActive] = useState(false);
@@ -8,28 +8,28 @@ function Results({ results, submit, setInp, inp }) {
 		<div className="pr-3">
 			<ul className="flex flex-wrap border-b border-gray-200 dark:border-gray-700 mt-4">
 				<li className="mr-2">
-					<a
+					<button
 						onClick={() => setActive(false)}
 						className={classNames(
-							'inline-block py-4 px-4 text-sm font-medium text-center  rounded-t-lg active cursor-pointer no-underline ',
-							{ 'text-orange-500 bg-gray-100': !active },
-							{ 'text-black': active }
+							"inline-block py-4 px-4 text-sm font-medium text-center  rounded-t-lg active cursor-pointer no-underline ",
+							{ "text-orange-500 bg-gray-100": !active },
+							{ "text-black": active }
 						)}
 					>
 						Run
-					</a>
+					</button>
 				</li>
 				<li className="mr-2">
-					<a
+					<button
 						onClick={() => setActive(true)}
 						className={classNames(
-							'inline-block py-4 px-4 text-sm font-medium text-center rounded-t-lg cursor-pointer no-underline',
-							{ 'text-orange-500 bg-gray-100': active },
-							{ 'text-black': !active }
+							"inline-block py-4 px-4 text-sm font-medium text-center rounded-t-lg cursor-pointer no-underline",
+							{ "text-orange-500 bg-gray-100": active },
+							{ "text-black": !active }
 						)}
 					>
 						Output
-					</a>
+					</button>
 				</li>
 			</ul>
 			{!active && (
@@ -38,7 +38,7 @@ function Results({ results, submit, setInp, inp }) {
 					className="block p-2.5 w-full text-sm mt-9  rounded-lg border  bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
 					placeholder="Enter Your Input"
 					value={inp}
-					onChange={evn => setInp(evn.target.value)}
+					onChange={(evn) => setInp(evn.target.value)}
 				/>
 			)}
 
